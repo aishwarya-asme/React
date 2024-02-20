@@ -1,5 +1,7 @@
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
+import Expenses from './components/Expenses';
+import React from 'react';
+//import ExpenseItem from './ExpenseItem';
 
 function App() {
   const expenses=[
@@ -34,27 +36,33 @@ function App() {
       LocationOfExpenditure :'Furniture shop',
     },
   ];
-  const expenseComponents = [];
+  // const expenseComponents = [];
 
-  for (let i = 0; i < expenses.length; i++) {
-    const expense = expenses[i];
-    expenseComponents.push(
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date}
-        LocationOfExpenditure={expense.LocationOfExpenditure}
-      />
-    );
-  }
+  // for (let i = 0; i < expenses.length; i++) {
+  //   const expense = expenses[i];
+  //   expenseComponents.push(
+  //     <ExpenseItem
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date}
+  //       LocationOfExpenditure={expense.LocationOfExpenditure}
+  //     />
+  //   );
+  // }
 
-  return (
-    <div>
-      <h2>Expense Items</h2>
-      {expenseComponents}
-    </div>
+  return React.createElement(
+    'div',
+    {},
+    React.createElement('h2',{},"Expense Items"),
+    React.createElement(Expenses,{items:expenses})
   );
+  // return (
+  //   <div>
+  //     <h2>Expense Items</h2>
+  //     <Expenses items={expenses} />
+  //   </div>
+  // );
 }
 
 export default App;

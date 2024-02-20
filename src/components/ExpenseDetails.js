@@ -1,4 +1,5 @@
 import './ExpenseDetails.css';
+import React from 'react';
 function ExpenseDetails(props){
     return (
         <div className="expense-details">
