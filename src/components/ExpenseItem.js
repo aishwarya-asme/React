@@ -6,6 +6,12 @@ import React from 'react';
 
 function ExpenseItem(props)
 {
+    const clickHandler=()=>{
+        console.log('clicked!!!');
+    };
+    const deleteHandler=()=>{
+        console.log('clicked!!!');
+    };
     
     // return (
     //     <div>
@@ -37,6 +43,8 @@ function ExpenseItem(props)
                 <div className='LocationOfExpenditure'>{props.LocationOfExpenditure}</div>
             </div>
         </div> */}
+        <button onClick={clickHandler}>Change Title</button>
+        <button onClick={deleteHandler}>Delete Expense</button>
         </Card>
     );
 }
