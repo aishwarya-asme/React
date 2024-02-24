@@ -1,6 +1,7 @@
 import './App.css';
 import Expenses from './components/Expenses';
 import React from 'react';
+import NewExpense from './components/NewExpense/NewExpense';
 //import ExpenseItem from './ExpenseItem';
 
 function App() {
@@ -51,18 +52,19 @@ function App() {
   //   );
   // }
 
-  return React.createElement(
-    'div',
-    {},
-    React.createElement('h2',{},"Expense Items"),
-    React.createElement(Expenses,{items:expenses})
-  );
-  // return (
-  //   <div>
-  //     <h2>Expense Items</h2>
-  //     <Expenses items={expenses} />
-  //   </div>
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   // React.createElement('h2',{},"Expense Items"),
+  //   React.createElement(Expenses,{items:expenses})
   // );
+  return (
+    <div>
+      {/* <h2>Expense Items</h2> */}
+      <NewExpense />
+      <Expenses items={expenses} />
+    </div>
+  );
 }
 
 export default App;

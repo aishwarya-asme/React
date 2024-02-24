@@ -1,16 +1,32 @@
+import React, { useState } from 'react';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
 import ExpenseDetails from './ExpenseDetails';
-import Card from './Card';
-import React from 'react';
+import Card from '../Card';
+
+
 
 function ExpenseItem(props)
-{
-    const clickHandler=()=>{
-        console.log('clicked!!!');
+{   const [title, setTitle] = useState(props.title);
+    const [amount,setAmount]= useState(props.amount);
+    // let title=props.title;
+
+    
+    const clickHandler= () =>{
+        setTitle("Updated!");
+        // title='Updated';
+        console.log(title);
     };
+
     const deleteHandler=()=>{
-        console.log('clicked!!!');
+        // title='Deleted';
+        setTitle('deleted!');
+        console.log(title);
+    };
+
+    const changeAmountHandler=()=>{
+        setAmount(100);
+        console.log(amount);
     };
     
     // return (
@@ -30,10 +46,11 @@ function ExpenseItem(props)
         
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
-
+                <h2>{title}</h2>
             <ExpenseDetails
             title={props.title}
-            amount={props.amount}
+            amount={amount}
+                
             LocationOfExpenditure={props.LocationOfExpenditure}/>
             
             {/* <div>{props.date.toISOString()}</div>  */}
@@ -45,6 +62,7 @@ function ExpenseItem(props)
         </div> */}
         <button onClick={clickHandler}>Change Title</button>
         <button onClick={deleteHandler}>Delete Expense</button>
+        <button onClick={changeAmountHandler}>Change Amount to $100</button>
         </Card>
     );
 }
