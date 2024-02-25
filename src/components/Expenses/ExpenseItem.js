@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
 import ExpenseDetails from './ExpenseDetails';
@@ -6,28 +6,28 @@ import Card from '../Card';
 
 
 
-function ExpenseItem(props)
-{   const [title, setTitle] = useState(props.title);
-    const [amount,setAmount]= useState(props.amount);
+const ExpenseItem=(props)=>{
+// {   const [title, setTitle] = useState(props.title);
+//     const [amount,setAmount]= useState(props.amount);
     // let title=props.title;
 
     
-    const clickHandler= () =>{
-        setTitle("Updated!");
-        // title='Updated';
-        console.log(title);
-    };
+    // const clickHandler= () =>{
+    //     setTitle("Updated!");
+    //     // title='Updated';
+    //     console.log(title);
+    // };
 
-    const deleteHandler=()=>{
-        // title='Deleted';
-        setTitle('deleted!');
-        console.log(title);
-    };
+    // const deleteHandler=()=>{
+    //     // title='Deleted';
+    //     setTitle('deleted!');
+    //     console.log(title);
+    // };
 
-    const changeAmountHandler=()=>{
-        setAmount(100);
-        console.log(amount);
-    };
+    // const changeAmountHandler=()=>{
+    //     setAmount(100);
+    //     console.log(amount);
+    // };
     
     // return (
     //     <div>
@@ -46,10 +46,10 @@ function ExpenseItem(props)
         
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
-                <h2>{title}</h2>
+                <h2>{props.title}</h2>
             <ExpenseDetails
-            title={props.title}
-            amount={amount}
+            // title={props.title}
+            // amount={amount}
                 
             LocationOfExpenditure={props.LocationOfExpenditure}/>
             
@@ -60,9 +60,9 @@ function ExpenseItem(props)
                 <div className='LocationOfExpenditure'>{props.LocationOfExpenditure}</div>
             </div>
         </div> */}
-        <button onClick={clickHandler}>Change Title</button>
+        {/* <button onClick={clickHandler}>Change Title</button>
         <button onClick={deleteHandler}>Delete Expense</button>
-        <button onClick={changeAmountHandler}>Change Amount to $100</button>
+        <button onClick={changeAmountHandler}>Change Amount to $100</button> */}
         </Card>
     );
 }
