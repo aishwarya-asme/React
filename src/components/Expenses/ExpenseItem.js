@@ -43,7 +43,7 @@ const ExpenseItem=(props)=>{
     // const LocationOfExpenditure='shop';
     
     return(
-        
+        <li>
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
                 <h2>{props.title}</h2>
@@ -64,6 +64,7 @@ const ExpenseItem=(props)=>{
         <button onClick={deleteHandler}>Delete Expense</button>
         <button onClick={changeAmountHandler}>Change Amount to $100</button> */}
         </Card>
+        </li>
     );
 }
 
